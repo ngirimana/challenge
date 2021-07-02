@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(198,153,99);;
+}
+
+.container {
+  border-radius: 12px;
+  box-shadow: 0 1px 8px white;
+  padding: 1rem;
+  background-color: rgb(198,153,99);
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+}
+.page-tile{
+color:white;
+text-align:center;
+}
+
+.container h2 {
+  color: #f2f2f2;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container .users {
+  list-style: none;
+  padding: 0;
+}
+
+.container .users .user {
+  border-radius: 12px;
+  box-shadow: 0 1px 8px white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  /* background-color: ; */
+}
+
+.users .user .users__item {
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 1rem;
+  color: white;
+}
+
+.user button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  background-color: rgb(178,132,81);
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.user button:hover,
+.user button:active {
+  background-color: rgb(198,153,99);
+  border: 0px;
+}
+
+.user button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.user button.alternative:hover,
+.user button.alternative:active {
+  background-color: #ddb3f8;
+}
+
+.backdrop,
+.backdrop-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgb(198,153,99);
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px white;
+  border-radius: 10px;
+}
+
+.header {
+  background: rgb(178,132,81);
+  padding: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content .message {
+  color: #3c3c3c;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions p {
+  font-weight: bold;
+}
+
+.action-btn {
+  font: inherit;
+  border: 1px solid #fff;
+  background: rgb(178,132,81);
+  color: white;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+}
+
+.action-btn:hover,
+.action-btn:active {
+  background: rgb(198,153,99);
+  border-color: rgb(198,153,99);
+  border: 1px solid #fff;
+}
+
+.action-btn:focus {
+  outline: none;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 3px solid white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgb(178,132,81);
+  box-shadow: 0 0 20px white;
+}
+.ring:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid rgb(178,132,81);
+  border-right: 3px solid rgb(178,132,81);
+  border-radius: 50%;
+  animation: animateC 2s linear infinite;
+}
+span {
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 2s linear infinite;
+}
+span:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(178,132,81);
+  top: -6px;
+  right: -8px;
+  box-shadow: 0 0 20px rgb(178,132,81);
+}
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .user h3,
+  h4 {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+
+  .user .post-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .users h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal h2 {
+    font-size: 1rem;
+  }
+  .modal p {
+    font-size: 0.7rem;
+  }
+}
+
+
